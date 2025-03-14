@@ -1,0 +1,48 @@
+# Test API Configuration Primitives
+
+set-api-key-test
+  extensions [openai]
+  O> openai:set-api-key "test-api-key"
+  
+set-api-base-test
+  extensions [openai]
+  O> openai:set-api-base "https://test-api-base.com/v1"
+  
+set-api-type-test
+  extensions [openai]
+  O> openai:set-api-type "azure"
+  
+set-api-version-test
+  extensions [openai]
+  O> openai:set-api-version "2023-05-15"
+
+# Test Chat Option Primitives
+
+set-chat-option-test
+  extensions [openai]
+  O> openai:set-chat-option "temperature" 0.7
+  O> openai:set-chat-option "max_tokens" 100
+  
+clear-chat-options-test
+  extensions [openai]
+  O> openai:set-chat-option "temperature" 0.7
+  O> openai:clear-chat-options
+
+# Test Chat Completion Primitive Syntax
+
+chat-completion-correct-syntax
+  extensions [openai]
+  O> openai:set-api-key "test-api-key"
+  O> __ignore openai:chat-completion "gpt-3.5-turbo" "Hello"
+
+chat-completion-with-messages-correct-syntax
+  extensions [openai]
+  O> openai:set-api-key "test-api-key"
+  O> __ignore openai:chat-completion-with-messages "gpt-3.5-turbo" (list (list "user" "Hello"))
+
+# Test Embedding Primitive Syntax
+
+get-embedding-correct-syntax
+  extensions [openai]
+  O> openai:set-api-key "test-api-key"
+  O> __ignore openai:get-embedding "text-embedding-ada-002" "test text" 

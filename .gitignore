@@ -1,0 +1,38 @@
+# sbt specific
+examples/
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+project/project/
+project/target/
+.bsp/
+
+# IDE specific
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.metals/
+.bloop/
+
+# Scala specific
+*.class
+*.log
+
+# NetLogo extension specific
+*.jar
+!lib/*.jar
+*.zip
+openai-*.*/
+.bundledFiles
+
+# OS specific
+.DS_Store
+*~
+.history
+.cache
+.lib/ 
